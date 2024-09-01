@@ -33,6 +33,11 @@ resource "hcloud_server" "server" {
 
   labels = var.labels
 
+  public_net {
+    ipv4_enabled = true
+    ipv6_enabled = var.enable_ipv6
+  }
+
   # Prevent destroying the whole cluster if the user changes
   # any of the attributes that force to recreate the servers.
   lifecycle {

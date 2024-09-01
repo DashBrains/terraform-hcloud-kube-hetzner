@@ -773,6 +773,12 @@ variable "enable_csi_driver_smb" {
   description = "Whether or not to enable csi-driver-smb."
 }
 
+variable "enable_ipv6" {
+  type        = bool
+  default     = true
+  description = "Enable IPV6."
+}
+
 variable "csi_driver_smb_version" {
   type        = string
   default     = "*"

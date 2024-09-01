@@ -29,6 +29,7 @@ module "agents" {
   swap_size                    = each.value.swap_size
   zram_size                    = each.value.zram_size
   keep_disk_size               = var.keep_disk_agents
+  enable_ipv6                  = var.enable_ipv6
 
   private_ipv4 = cidrhost(hcloud_network_subnet.agent[[for i, v in var.agent_nodepools : i if v.name == each.value.nodepool_name][0]].ip_range, each.value.index + 101)
 

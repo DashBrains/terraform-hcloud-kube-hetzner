@@ -29,6 +29,7 @@ module "control_planes" {
   swap_size                    = each.value.swap_size
   zram_size                    = each.value.zram_size
   keep_disk_size               = var.keep_disk_cp
+  enable_ipv6                  = var.enable_ipv6
 
   # We leave some room so 100 eventual Hetzner LBs that can be created perfectly safely
   # It leaves the subnet with 254 x 254 - 100 = 64416 IPs to use, so probably enough.

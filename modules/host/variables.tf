@@ -17,6 +17,12 @@ variable "ssh_port" {
   type        = number
 }
 
+variable "enable_ipv6" {
+  type        = bool
+  default     = true
+  description = "Enable IPV6."
+}
+
 variable "ssh_public_key" {
   description = "SSH public Key"
   type        = string
